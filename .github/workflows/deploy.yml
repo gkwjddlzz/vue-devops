@@ -33,12 +33,12 @@ jobs:
         run: npm install
 
       - name: Build page
-        run: npm build
+        run: npm run build
         env:
           NODE_ENV: produntion
 
       - name: Deploy to gh-pages
-        users: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secret.GITHUB_TOKEN }}
           publish_dir: ./dist
